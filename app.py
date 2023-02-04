@@ -1,6 +1,7 @@
 import json
 from http.client import OK, INTERNAL_SERVER_ERROR
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request, escape
+from flask_cors import CORS, cross_origin
 from persistence.giphy_manager import GiphyManager, PersistenceException
 
 giphy_manager = GiphyManager()
@@ -21,9 +22,13 @@ def login():
     ), OK
 
 @app.route('/search', methods=['GET'])
+@cross_origin()
 def search():
     try:
-        gifs = giphy_manager.get_gifs('prova', limit=2)
+        args = request.args
+        query = escape(args['query'])
+        limit = escape(args['limit'])
+        gifs = giphy_manager.get_gifs(query, limit=limit)
         gifs_dict = [gif.__dict__() for gif in gifs]
         return jsonify(
             {
@@ -36,6 +41,9 @@ def search():
                 'message': e.args[0]
             }
         ), INTERNAL_SERVER_ERROR
+    except Exception as e:
+        print(e)
+        raise e
 
 if __name__ == '__main__':
     app.run(debug=True)

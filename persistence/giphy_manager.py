@@ -33,7 +33,7 @@ class GiphyManager:
                 gif = Gif()
                 gif.name = element['title']
                 gif.rating = element['rating']
-                gif.url = element['url']
+                gif.url = element['images']['original']['url']
                 gif.creator = element['username']
                 gifs.append(gif)
             return gifs
