@@ -30,7 +30,7 @@ In this module there is a class that takes care of the interaction with GIPHY pr
 2. builds the request
 3. handle the response: 
     
-    - it raise an ad-hoc exception if an error happens.This exception encapsulates the possible exception that can happen.
+    - it raises an ad-hoc exception if an error happens.This exception encapsulates the possible exception that can happen.
     - it builds the list of gifts if the request is successful.
 
 ## Endpoints
@@ -51,7 +51,7 @@ In this module there is a class that takes care of the interaction with GIPHY pr
 1. Build the Dockerfile
 2. Run the docker image with the following settings:
     - host port: 5000
-    - add an environment GIPHY_TOKEN=<*YOUR-TOKEN*>
+    - add an environment variable GIPHY_TOKEN=<*YOUR-TOKEN*>
 3. Go to http://127.0.0.1:5000/, you should get the following text: 'Welcome in GIFunny backend'.
 
 ### Without Docker
