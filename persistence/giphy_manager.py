@@ -18,7 +18,7 @@ class GiphyManager:
         if not token:
             raise PersistenceException('The provided token is null.')
         return {
-            "api_key": constants.GIPHY_TOKEN,
+            "api_key": token,
             "q": query,
             "limit": limit
         }
