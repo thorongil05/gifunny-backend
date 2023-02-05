@@ -1,4 +1,12 @@
 from abc import ABC
+from enum import Enum
+
+class Rating(Enum):
+
+    LEVEL_1 = 'g'
+    LEVEL_2 = 'pg'
+    LEVEL_3 = 'pg-13'
+    LEVEL_4 = 'r'
 
 class Gif(ABC):
 
@@ -28,8 +36,8 @@ class Gif(ABC):
         return self._rating
     
     @rating.setter
-    def rating(self, value):
-        self._rating = value
+    def rating(self, value: str):
+        self._rating = Rating(value).name
 
     @property
     def creator(self):
