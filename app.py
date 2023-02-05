@@ -1,4 +1,3 @@
-import json
 from http.client import OK, INTERNAL_SERVER_ERROR, BAD_REQUEST
 from flask import Flask, jsonify, request, escape
 from flask_cors import CORS, cross_origin
@@ -8,9 +7,9 @@ giphy_manager = GiphyManager()
 
 app = Flask(__name__)
 
-@app.route('/home', methods=['GET'])
+@app.route('/', methods=['GET'])
 def home():
-    return 'Hello world'
+    return 'Welcome in GIFunny backend'
 
 @app.route('/gifs', methods=['GET'])
 @cross_origin()
