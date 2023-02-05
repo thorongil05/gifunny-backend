@@ -14,6 +14,9 @@ class GiphyManager:
         
         
     def get_search_params(self, query: str, limit: int = 50):
+        token = constants.GIPHY_TOKEN
+        if not token:
+            raise PersistenceException('The provided token is null.')
         return {
             "api_key": constants.GIPHY_TOKEN,
             "q": query,

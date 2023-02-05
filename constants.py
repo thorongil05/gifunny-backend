@@ -1,1 +1,3 @@
-GIPHY_TOKEN = 'L3e073vEo8kMeapUuOCip61IkvPiysWb'
+import os
+
+GIPHY_TOKEN = os.environ['GIPHY_TOKEN']
