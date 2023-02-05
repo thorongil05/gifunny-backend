@@ -1,3 +1,3 @@
 import os
 
-GIPHY_TOKEN = os.environ['GIPHY_TOKEN']
+GIPHY_TOKEN = os.getenv('GIPHY_TOKEN')

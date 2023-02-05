@@ -51,7 +51,7 @@ In this module there is a class that takes care of the interaction with GIPHY pr
 1. Build the Dockerfile
 2. Run the docker image with the following settings:
     - host port: 5000
-    - add an environment variable GIPHY_TOKEN=<*YOUR-TOKEN*>
+    - add an environment variable GIPHY_TOKEN=<*YOUR-GIPHY-TOKEN*> (IMPORTANT!)
 3. Go to http://127.0.0.1:5000/, you should get the following text: 'Welcome in GIFunny backend'.
 
 ### Without Docker
