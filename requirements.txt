@@ -8,7 +8,7 @@ Flask-Cors==3.0.10
 idna==3.4
 importlib-metadata==6.0.0
 itsdangerous==2.1.2
-Jinja2==3.1.2
+Jinja2==3.1.6
 jsonschema==4.17.3
 MarkupSafe==2.1.2
 pyrsistent==0.19.3
